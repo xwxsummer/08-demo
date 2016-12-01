@@ -22,7 +22,7 @@ class About extends React.Component {
     let value=this.refs.getName.getValue();
     this.refs.form.reset();
     axios
-    .get(`http://api.github.com/users/${value}`)
+    .get(`https://api.github.com/users/${value}`)
     .then(res => this.setState({data:res.data,wait:2}) )
     .catch(error => {alert(error);this.setState({wait:0})})
   }
