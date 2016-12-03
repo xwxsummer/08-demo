@@ -1,10 +1,14 @@
 import React from 'react';
-
+import axios from 'axios';
 var marked = require("marked");
 
 
-class Item extends React.Component {
 
+class Item extends React.Component {
+  componentDidMount(){
+    let address=this.props.params.title;
+    console.log(address);
+  }
   render () {
     console.log(this.props)
     let content = this.props.params.title==1 ? "这个是第一个页面":
@@ -13,8 +17,6 @@ class Item extends React.Component {
     return(
       <div>
         {content}
-        {marked('# hihdohdoh')}
-        <div dangerouslySetInnerHTML={{__html:marked("# 你好啊")}} />
       </div>
     )
   }
