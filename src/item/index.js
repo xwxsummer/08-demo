@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 var marked = require("marked");
+import Loading from '../component/Loading';
 
 
 
@@ -18,10 +19,10 @@ class Item extends React.Component {
     .then(res =>this.setState({data:res.data}) )
   }
   render () {
-    let content = this.state.data.length==0 ? "请稍等" :
+    let content = this.state.data.length==0 ? <Loading />:
       marked(this.state.data);
     return(
-      <div>
+      <div className="item-wrap">
         <div dangerouslySetInnerHTML={{__html:content}} />
       </div>
     )
