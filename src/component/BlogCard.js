@@ -15,7 +15,7 @@ class BlogCard extends React.Component {
           <h3>{this.props.title}</h3>
           <p>{this.props.desc}</p>
           <RaisedButton label="阅读更多" secondary={true}
-          style={style} href={`#/item/${this.props.index}`} />
+          style={style} href={`#/item/${this.props.url}`} />
         </div>
       </div>
     )

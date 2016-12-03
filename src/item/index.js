@@ -1,5 +1,8 @@
 import React from 'react';
 
+var marked = require("marked");
+
+
 class Item extends React.Component {
 
   render () {
@@ -10,8 +13,9 @@ class Item extends React.Component {
     return(
       <div>
         {content}
+        {marked('# hihdohdoh')}
+        <div dangerouslySetInnerHTML={{__html:marked("# 你好啊")}} />
       </div>
-
     )
   }
 }
