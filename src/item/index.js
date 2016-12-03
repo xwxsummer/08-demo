@@ -5,18 +5,24 @@ var marked = require("marked");
 
 
 class Item extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      data:''
+    }
+  }
   componentDidMount(){
     let address=this.props.params.title;
     console.log(address);
+    axios.get(`https://raw.githubusercontent.com/xwxsummer/08-demo/master/data/${address}.md`)
+    .then(res =>this.setState({data:res.data}) )
   }
   render () {
-    console.log(this.props)
-    let content = this.props.params.title==1 ? "这个是第一个页面":
-        this.props.params.title==2 ? "这个是第二个页面":
-        this.props.params.title==3 ? "这个是第三个页面":"这是第N个页面";
+    let content = this.state.data.length==0 ? "请稍等" :
+      marked(this.state.data);
     return(
       <div>
-        {content}
+        <div dangerouslySetInnerHTML={{__html:content}} />
       </div>
     )
   }
