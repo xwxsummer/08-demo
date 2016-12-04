@@ -10,7 +10,6 @@ import NoMatch from './component/NoMatch';
 
 class Routers extends React.Component {
   render () {
-    console.log(this.props);
     return(
       <Router history={hashHistory}>
         <Route path='/' component={App}>

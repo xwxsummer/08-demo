@@ -15,12 +15,15 @@ class Blog extends React.Component {
   }
   componentDidMount(){
     axios.get('https://raw.githubusercontent.com/xwxsummer/08-demo/master/data/blogcard.json?a='+Math.random())
-        .then(res=>this.setState({data:res.data,wait:false}))
+        .then(res => this.setState({data:res.data,wait:false}))
   }
   render () {
     return(
       <div className="blog-wrap">
-        {this.state.wait?<Loading />:this.state.data.map((item,i) => <BlogCard {...item} key={i} />)}
+        {
+          this.state.wait ? <Loading /> :
+          this.state.data.map((item,i) => <BlogCard {...item} key={i} />)
+        }
       </div>
 
 

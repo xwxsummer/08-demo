@@ -1,0 +1,9 @@
+.post-wrap {
+  padding: 10px;
+}
+.post-wrap h1{
+  color: teal;
+}
+.post-wrap p{
+  color: #666;
+}

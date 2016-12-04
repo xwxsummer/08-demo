@@ -20,11 +20,12 @@ class App extends React.Component {
     this.setTitle()
   }
   setTitle(){
+    console.log(this.props);
     this.setState({
       title:this.props.router.isActive('/',true)?'Home':
             this.props.router.isActive('/blog',true)?'Blog':
-      
-            this.props.router.isActive('/work',true)?'Work':"About"
+            this.props.router.isActive('/work',true)?'Work':
+            this.props.router.isActive('/about',true)?'About':'Blog'
     })
   }
   render () {
