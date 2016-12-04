@@ -6,6 +6,34 @@ button:focus, button:hover,button:visited{
   flex-direction: column;
   height: 100vh;
 }
+@media(min-width:760px) {
+  .my-wrap{
+    flex-direction: row;
+  }
+}
+.leftnav-wrap{
+  width: 300px;
+  background-color: #00BCD4;
+  color: #fff;
+}
+.leftnav-wrap h2{
+  border-bottom: 2px solid #E91E63;
+  padding-bottom: 20px;
+}
+.leftnav-wrap a{
+  display: block;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px 0;
+}
+.leftnav-wrap a:hover{
+  background-color: rgba(0, 0, 0, 0.5);;
+}
+.leftnav-wrap span{
+  font-size: 18px;
+  padding-right: 20px;
+}
 .main{
   flex-grow: 1;
   overflow: scroll;
