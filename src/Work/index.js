@@ -6,14 +6,14 @@ class Work extends React.Component {
     var myChart = echarts.init(document.getElementById('main'));
 // 绘制图表
 myChart.setOption({
-    title: { text: 'ECharts 入门示例',
+    title: { text: '技能显示',
               textStyle:{color: 'rgba(0, 255,0, 0.3)'},
               left:'center'
             },
 
     tooltip: {},
     xAxis: {
-        data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        data: ["javascript","jQuery","Html5","ajax","react","node.js"]
     },
     yAxis: {},
     series: [{
